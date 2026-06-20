@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+/* ─── Spatial Design Theme ────────────────────────────────────────────────
+   Warm neutrals, rich woods, refined accents — a sophisticated palette
+   for interior design professionals.
+   ──────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Warm Neutral Palette */
+  --color-cream-50: #FDFBF7;
+  --color-cream-100: #FAF6EE;
+  --color-cream-200: #F2EBDB;
+  --color-cream-300: #E6D9BC;
+  --color-cream-400: #D6C49A;
+  --color-cream-500: #C4AE7A;
+  --color-cream-600: #A8915D;
+  --color-cream-700: #8C7346;
+  --color-cream-800: #735D3A;
+  --color-cream-900: #5F4D31;
+
+  /* Rich Wood Tones */
+  --color-wood-50: #F8F4EF;
+  --color-wood-100: #EDE4D7;
+  --color-wood-200: #D9C8B0;
+  --color-wood-300: #C4A886;
+  --color-wood-400: #B08D64;
+  --color-wood-500: #9C7548;
+  --color-wood-600: #7E5E3A;
+  --color-wood-700: #654A2E;
+  --color-wood-800: #523C25;
+  --color-wood-900: #42311E;
+
+  /* Refined Accent — Warm Terracotta */
+  --color-terracotta-50: #FDF6F3;
+  --color-terracotta-100: #F9E8E0;
+  --color-terracotta-200: #F2D0C1;
+  --color-terracotta-300: #E8AF99;
+  --color-terracotta-400: #DC886B;
+  --color-terracotta-500: #D16A47;
+  --color-terracotta-600: #BD5736;
+  --color-terracotta-700: #9D452C;
+  --color-terracotta-800: #823B27;
+  --color-terracotta-900: #6D3323;
+
+  /* Sophisticated Sage */
+  --color-sage-50: #F4F7F4;
+  --color-sage-100: #E3EBE3;
+  --color-sage-200: #C7D7C7;
+  --color-sage-300: #A3BCA3;
+  --color-sage-400: #7D9E7D;
+  --color-sage-500: #5E835E;
+  --color-sage-600: #4A6A4A;
+  --color-sage-700: #3C553C;
+  --color-sage-800: #324732;
+  --color-sage-900: #2A3B2A;
+
+  /* Deep Navy Accent */
+  --color-navy-50: #F4F6F9;
+  --color-navy-100: #E3E8F0;
+  --color-navy-200: #C8D1E2;
+  --color-navy-300: #A0B0CC;
+  --color-navy-400: #738BB0;
+  --color-navy-500: #546D96;
+  --color-navy-600: #42567C;
+  --color-navy-700: #374565;
+  --color-navy-800: #2F3B55;
+  --color-navy-900: #1A2335;
+
+  /* Neutral / Slate */
+  --color-slate-50: #F8F9FA;
+  --color-slate-100: #ECEDEE;
+  --color-slate-200: #D4D6DA;
+  --color-slate-300: #B1B4BB;
+  --color-slate-400: #888C95;
+  --color-slate-500: #6B6F78;
+  --color-slate-600: #555860;
+  --color-slate-700: #44474D;
+  --color-slate-800: #3A3C42;
+  --color-slate-900: #2E3035;
+
+  /* Font Families */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-elevation: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+  --shadow-drawer: -4px 0 24px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Base Styles ───────────────────────────────────────────────────────── */
+
+@layer base {
+  * {
+    @apply border-slate-200;
+  }
+
+  body {
+    @apply bg-cream-50 text-slate-800 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-slate-900 tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl font-medium;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl font-medium;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl font-medium;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl font-medium;
+  }
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────────────── */
+
+@layer components {
+  .btn-primary {
+    @apply bg-wood-600 text-white px-6 py-2.5 rounded-lg font-medium 
+           hover:bg-wood-700 active:bg-wood-800 transition-all duration-200
+           shadow-soft hover:shadow-elevation;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-slate-700 px-6 py-2.5 rounded-lg font-medium
+           border border-slate-200 hover:bg-slate-50 hover:border-slate-300
+           active:bg-slate-100 transition-all duration-200 shadow-soft;
+  }
+
+  .btn-terracotta {
+    @apply bg-terracotta-500 text-white px-6 py-2.5 rounded-lg font-medium
+           hover:bg-terracotta-600 active:bg-terracotta-700 transition-all duration-200
+           shadow-soft hover:shadow-elevation;
+  }
+
+  .btn-ghost {
+    @apply text-slate-600 px-4 py-2 rounded-lg font-medium
+           hover:bg-slate-100 active:bg-slate-200 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-slate-100 shadow-soft
+           hover:shadow-card transition-shadow duration-300;
+  }
+
+  .card-interactive {
+    @apply card cursor-pointer hover:border-wood-200 hover:shadow-elevation;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-lg border border-slate-200
+           bg-white text-slate-800 placeholder-slate-400
+           focus:outline-none focus:ring-2 focus:ring-wood-300 focus:border-wood-400
+           transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-slate-700 mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-draft {
+    @apply badge bg-slate-100 text-slate-600;
+  }
+
+  .badge-active {
+    @apply badge bg-sage-100 text-sage-700;
+  }
+
+  .badge-completed {
+    @apply badge bg-wood-100 text-wood-700;
+  }
+
+  .badge-pending {
+    @apply badge bg-cream-100 text-cream-700;
+  }
+
+  .section-heading {
+    @apply text-lg font-serif font-medium text-slate-900 mb-4;
+  }
+
+  .divider {
+    @apply w-full h-px bg-slate-100 my-6;
+  }
+}
