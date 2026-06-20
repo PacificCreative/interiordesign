@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display, JetBrains_Mono } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
+import { ThemeProvider } from '@/lib/providers';
 import './globals.css';
 
 const inter = Inter({
@@ -59,7 +60,7 @@ export default function RootLayout({
     >
       <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable}`}>
         <body className="min-h-screen bg-cream-50 font-sans text-slate-800 antialiased">
-          {children}
+          <ThemeProvider>{children}</ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
